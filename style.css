@@ -188,6 +188,36 @@ input.valid{
 input.invalid{
     border:thin solid #9a0001;
 }
+/**************LIST**************/
+.list {
+    width: 100%;
+    list-style: none;
+}
+.list li{
+    padding: 1rem;
+    color: #000;
+    background: #edf6f9;
+    border-color: #000;
+    border-style: solid;
+    border-width: 0 thin thin thin;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list li:first-child{
+    border-top-width: thin;
+    border-radius:  0.35rem 0.35rem 0 0;
+}
+.list li:last-child{
+    border-radius:  0 0 0.35rem 0.35rem ;
+}
+ li.active{
+    color: #FFF;
+    background-color: #3b78ac;
+    border: thin solid #2a679b;
+}
 /**************COLORS**************/
 .active{
     color: #FFF;

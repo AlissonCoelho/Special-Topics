@@ -1,4 +1,4 @@
-let screens = ['component1','component2','component3'];
+let screens = ['component1','component2','component3','component4'];
 
 const show =(comp) => {
     screens.forEach((c)=> {
@@ -26,6 +26,10 @@ onload = () => {
     }
     document.querySelector('#tab3').onclick = (e) => {
         show('component3');
+        active(e.target);
+    }
+    document.querySelector('#tab4').onclick = (e) => {
+        show('component4');
         active(e.target);
     }
 }
