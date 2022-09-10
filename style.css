@@ -9,9 +9,16 @@
 body{
     padding-top: 5rem;
     background-color:rgb(218, 222, 227);
+    padding-bottom: 4rem;
 }
+
+.hidden{
+    display: none;
+}
+
+/**************BUTTONS**************/
 /*default button*/
-button{
+.button{
     height: 2rem;
     min-width: 2rem;
     padding: 0.25rem 0.4rem;
@@ -21,7 +28,7 @@ button{
     border:thin solid #dce5e8;
     line-height: .75rem;
 }
-button:active{
+.button:active{
     height: 2rem;
     min-width: 2rem;
     padding: 0.25rem 0.4rem;
@@ -37,20 +44,20 @@ button:active{
     justify-content: center;
 }
 /*all button inside .buttonGroup*/
-.buttonGroup button{
+.buttonGroup .button{
     flex: 1;
     border-radius: 0;
 }
 /*first button*/
-.buttonGroup button:first-child{
+.buttonGroup .button:first-child{
     border-radius: 0.35rem 0 0 0.35rem;
 }
 /*last button*/
-.buttonGroup button:last-child{
+.buttonGroup .button:last-child{
     border-radius: 0 0.35rem 0.35rem 0;
 }
 /*just one button*/
-.buttonGroup button:first-child:last-child{
+.buttonGroup .button:first-child:last-child{
     border-radius: 00.35rem 0.35rem 0.35rem 0.35rem;
 }
 /*half size*/
@@ -68,18 +75,28 @@ button:active{
     flex: 0.25;
 }
 
+/**************TEXT**************/
 h1{
+    margin-top: 1rem;
     font-size: 1.5rem;
     font-weight: bold;
 }
 h2{
+    margin-top: 1rem;
     font-size: 1.2rem;
     font-weight: bold;
 }
 h3{
+    margin-top: 1rem;
     font-size: 1rem;
     font-weight: bold;
 }
+p{
+    margin-top: 1rem;
+    text-align: justify;
+}
+
+/**************HEADRE**************/
 .headerBar {
     position: fixed;
     top: 0;
@@ -109,13 +126,57 @@ h3{
     margin-right: 1rem;
 }
 
-/*colors*/
+/**************COMPONENTS**************/
+.component{
+    padding: 1rem;
+}
+/**************NAVEGATION**************/
+.nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #000;
+    background: #edf6f9;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*any element after .nav with isn't .bottom*/
+.nav:not(.bottom) ~ *{
+    margin-top: 4rem;
+}
+.nav .buttonGroup{
+    flex: 1;
+}
+
+.nav .button{
+    height: 4rem;
+}
+.nav .buttonGroup .button:first-child,
+.nav .buttonGroup .button:last-child{
+    border-radius: 0;
+}
+/**************COLORS**************/
+.active{
+    color: #FFF;
+    background-color: #3b78ac;
+    border: thin solid #2a679b;
+}
+.active:active{
+    color: #FFF;
+    background-color: #19568a;
+    border:thin solid #084579;
+}
+
 .primary{
     color: #FFF;
     background-color: #3b78ac;
     border: thin solid #2a679b;
 }
 .primary:active{
+    color: #FFF;
     background-color: #19568a;
     border:thin solid #084579;
 }
@@ -126,6 +187,7 @@ h3{
     border:thin solid #bccead;
 }
 .secondary:active{
+    color: #000;
     background-color: #abbd9c;
     border:thin solid #9aac8d;
 }
@@ -136,6 +198,7 @@ h3{
     border:thin solid #198c7e;
 }
 .success:active{
+    color: #FFF;
     background-color: #087b6d;
     border:thin solid #06594b;
 }
@@ -146,6 +209,7 @@ h3{
     border:thin solid #eec055;
 }
 .warning:active{
+    color: #000;
     background-color: #ddb033;
     border:thin solid #cca011;
 }
@@ -156,6 +220,7 @@ h3{
     border:thin solid #de122b;
 }
 .danger:active{
+    color: #FFF;
     background-color: #ab0004;
     border:thin solid #9a0001;
 }
@@ -166,6 +231,7 @@ h3{
     border:thin solid #dce5e8;
 }
 .ligth:active{
+    color: #000;
     background-color: #cbd4d7;
     border:thin solid #dac3c6;
 }
@@ -176,21 +242,21 @@ h3{
     border:thin solid #0c293d;
 }
 .dark:active{
+    color: #ddd;
     background-color: #0a071b;
     border:thin solid #080407;
 }
 
-
-/*Spacing*/
+/**************SPACING**************/
 .mt1{
-    margin-top: 1rem;
+    margin-top: 0.75rem;
 }
 .mt2{
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 .mt3{
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 .mt4{
-    margin-top: 4rem;
+    margin-top: 3rem;
 }
