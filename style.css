@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    font-weight: normal;
+    line-height: 1.5rem;
+}
+body{
+    padding-top: 5rem;
+}
+button{
+    border-radius: 0.3rem;
+}
+h1{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+h2{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+h3{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.headerBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1d3a4e;
+    color: #FFF;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.appName{
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+.badge{
+    border: thin solid black;
+    border-radius: 0.75rem;
+    min-width: 1.25rem;
+    text-align: center;
+    background-color: #FFF;
+    color: #000;
+    margin-right: 1rem;
+}
+
+/*colors*/
+.primary{
+    color: #FFF;
+    background-color: #3b78ac;
+    border: thin solid #2a679b;
+}
+.primary:active{
+    background-color: #19568a;
+    border:thin solid #084579;
+}
+
+
+.secondary{
+    color: #000;
+    background-color: #cddfeb;
+    border:thin solid #bccead;
+}
+.secondary:active{
+    background-color: #abbd9c;
+    border:thin solid #9aac8d;
+}
+
+.success{
+    color: #FFF;
+    background-color: #2a9d8f;
+    border:thin solid #198c7e;
+}
+.success:active{
+    background-color: #087b6d;
+    border:thin solid #06594b;
+}
+
+.warning{
+    color: #000;
+    background-color: #ffd166;
+    border:thin solid #eec055;
+}
+.warning:active{
+    background-color: #ddb033;
+    border:thin solid #cca011;
+}
+
+.danger{
+    color: #FFF;
+    background-color: #ef233c;
+    border:thin solid #de122b;
+}
+.danger:active{
+    background-color: #ab0004;
+    border:thin solid #9a0001;
+}
+
+.ligth{
+    color: #000;
+    background-color: #edf6f9;
+    border:thin solid #dce5e8;
+}
+.ligth:active{
+    background-color: #cbd4d7;
+    border:thin solid #dac3c6;
+}
+
+.dark{
+    color: #FFF;
+    background-color: #1d3a4e;
+    border:thin solid #0c293d;
+}
+.dark:active{
+    background-color: #0a071b;
+    border:thin solid #080407;
+}
+
+
+/*Spacing*/
+.mt1{
+    margin-top: 1rem;
+}
+.mt2{
+    margin-top: 2rem;
+}
+.mt3{
+    margin-top: 3rem;
+}
+.mt4{
+    margin-top: 4rem;
+}
