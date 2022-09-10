@@ -158,6 +158,36 @@ p{
 .nav .buttonGroup .button:last-child{
     border-radius: 0;
 }
+/**************FORMS**************/
+.field{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.field label{
+    margin-right: 1rem;
+}
+.field input{
+    flex: 1;
+    height: 2rem;
+    padding: 0.3rem 0.7rem;
+    color: #000;
+    background: #edf6f9;
+    border:thin solid #dce5e8;
+    border-radius: 0.35rem;
+}
+
+.field label.fixed{
+    width: 4rem;
+}
+
+input.valid{
+    border:thin solid #06594b;
+}
+input.invalid{
+    border:thin solid #9a0001;
+}
 /**************COLORS**************/
 .active{
     color: #FFF;
