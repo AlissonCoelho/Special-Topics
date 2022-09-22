@@ -23,3 +23,35 @@ onload = () => {
   
       show();
   };
+  //
+  let tasks = [
+    { id: '1', description: 'Pay energy account'},
+    {id: '2', description: 'Take car for serviceCar'},
+    {id: '3', description: 'Prepare class next week'}
+  ]
+
+  onload = () => {
+    showTasks();
+  }
+
+  const showTasks = () => {
+    const taskList = document.querySelector('#taskList');
+    taskList.innerHTML = '';
+    tasks.forEach ( (t)=>{
+        let elemTask = document.createElement('li');
+        elemTask.innerHTML = t.description;
+        elemTask.onclick = ()=>{
+            //Edit task
+        }
+        taskList.appendChild(elemTask);
+    })
+    if(tasks.length>0){
+        taskList.classList.remove('hidden');
+        document.querySelector('#blank').classList.add('hidden');
+    }
+    else{
+        taskList.classList.add('hidden');
+        document.querySelector('#blank').classList.remove('hidden');
+    }
+    document.querySelector('#state').innerHTML = tasks.length;
+  }

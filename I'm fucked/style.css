@@ -239,8 +239,8 @@ input.invalid{
 .list li{
     padding: 1rem;
     color: #000;
-    background: #edf6f9;
-    border-color: #000;
+    background: rgb(228, 232, 237);
+    border-color: #999;
     border-style: solid;
     border-width: 0 thin thin thin;
     display: flex;
