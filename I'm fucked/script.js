@@ -1,5 +1,13 @@
+let tasks = []
 //When app is load
 onload = () => {
+
+    //Load local storage
+    const t = JSON.parse(localStorage.getItem('tasks'));
+    //if t diferente of null
+    if(t)
+        tasks = t;
+
     showTasks();
     //Cath input text on field of input task
     document.querySelector('#InputNewTask').oninput = monitorInputField;
@@ -31,12 +39,6 @@ onload = () => {
         delTask(document.querySelector('#InputEditTask'));
     }
 }
-let tasks = [
-    { id: '1', description: 'Pay energy account' },
-    { id: '2', description: 'Take car for serviceCar' },
-    { id: '3', description: 'Prepare class next week' }
-]
-
 
 //Function to show tasks
 const showTasks = () => {
@@ -88,6 +90,7 @@ const addTask = (InputNewTask) => {
             }
         )
         active('screen1');
+        saveTasks();
         showTasks();
         InputNewTask.value = '';
     }
@@ -102,6 +105,7 @@ const ediTask = (InputEditTask) => {
         InputEditTask.value = '';
         InputEditTask.removeAttribute('data-id');
         active('screen1');
+        saveTasks();
         showTasks();
     }
 }
@@ -114,8 +118,13 @@ const delTask = (InputEditTask) => {
         InputEditTask.value = '';
         InputEditTask.removeAttribute('data-id');
         active('screen1');
+        saveTasks();
         showTasks();
     }
+}
+
+const saveTasks = () =>{
+    localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 //Monitoing the input field is editing
