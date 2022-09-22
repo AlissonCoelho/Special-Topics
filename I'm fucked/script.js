@@ -14,11 +14,21 @@ onload = () => {
     }
     document.querySelector('#btnCanc1').onclick = () => {
         document.querySelector('#InputNewTask').value = '';
+        document.querySelector('#InputNewTask').removeAttribute('data-id')
+        active('screen1');
+    }
+    document.querySelector('#btnCanc2').onclick = () => {
+        document.querySelector('#InputEditTask').value = '';
         active('screen1');
     }
     document.querySelector('#btnInc').onclick = () => {
-        addTask(document.querySelector('#InputNewTask').value);
-        
+        addTask(document.querySelector('#InputNewTask'));
+    }
+    document.querySelector('#btnEdit').onclick = () => {
+        ediTask(document.querySelector('#InputEditTask'));
+    }
+    document.querySelector('#btnDel').onclick = () => {
+        delTask(document.querySelector('#InputEditTask'));
     }
 }
 let tasks = [
@@ -35,8 +45,14 @@ const showTasks = () => {
     tasks.forEach((t) => {
         let elemTask = document.createElement('li');
         elemTask.innerHTML = t.description;
+        elemTask.setAttribute('data-id', t.id);
         elemTask.onclick = () => {
-            //Edit task
+            let field = document.querySelector('#InputEditTask');
+            active('screen3');
+            field.value = t.description;
+            //save ID on field
+            field.setAttribute('data-id', t.id);
+            field.focus();
         }
         taskList.appendChild(elemTask);
     })
@@ -62,27 +78,53 @@ const active = (comp) => {
 }
 
 //Add Task
-const addTask = () =>{
-    description = document.querySelector('#InputNewTask');
-    if (description.value != ''){
+const addTask = (InputNewTask) => {
+    //InputNewTask = document.querySelector('#InputNewTask');
+    if (InputNewTask.value != '') {
         tasks.push(
             {
-                id: Math.random().toString().replace('0.',''),
-                description: description.value
+                id: Math.random().toString().replace('0.', ''),
+                description: InputNewTask.value
             }
         )
         active('screen1');
         showTasks();
-        description.value = '';
+        InputNewTask.value = '';
     }
 }
 
-const monitorInputField = (e) =>{
+//Edit Task
+const ediTask = (InputEditTask) => {
+    if (InputEditTask.value != '') {
+        let idTask = InputEditTask.getAttribute('data-id');
+        let i = tasks.findIndex((t) => t.id == idTask);
+        tasks[i].description = InputEditTask.value
+        InputEditTask.value = '';
+        InputEditTask.removeAttribute('data-id');
+        active('screen1');
+        showTasks();
+    }
+}
+
+//Delete Task
+const delTask = (InputEditTask) => {
+    if (InputEditTask.value != '') {
+        let idTask = InputEditTask.getAttribute('data-id');
+        tasks = tasks.filter((t)=> t.id != idTask);
+        InputEditTask.value = '';
+        InputEditTask.removeAttribute('data-id');
+        active('screen1');
+        showTasks();
+    }
+}
+
+//Monitoing the input field is editing
+const monitorInputField = (e) => {
     let btnInc = document.querySelector('#btnInc');
-    if(e.target.value.length > 0){
+    if (e.target.value.length > 0) {
         btnInc.disabled = false;
     }
-    else{
+    else {
         btnInc.disabled = true;
     }
 }
