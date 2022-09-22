@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>I'm fucked</title>
+    <title>I'm screwed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js"></script>
+    
   </head>
   <body>
     <header class="headerBar dark">
-      <div class="appName">I'm fucked</div>
-      <div class="badge warning">
+      <div class="appName">I'm screwed</div>
+      <button class="badge warning">
         <span id="state">0</span>
-      </div>
+      </button>
     </header>
 
     <div id="screen1" class="component">
@@ -28,10 +28,30 @@
           <img src="Images/hanglooose.png" alt="nothing to do now" />
           <p>nothing to do now</p>
         </div>
-        <ul id="taskList" class="list hidden">
-            
-        </ul>
+        <ul id="taskList" class="list hidden"></ul>
+      </div>
+    </div>
+    <div id="screen2" class="component hidden">
+      <div class="componentHeader">
+        <h1 class="componentTitle">
+            New Task
+        </h1>
+      </div>
+      <div class="componentContent">
+        <div class="field">
+            <label for="InputNewTask">Task:</label>
+            <input id="InputNewTask"type="text" autocomplete="off"/>
+        </div>
+        <div class="buttonGroup mt1">
+            <button id="btnCanc1" class="button quarter ligth">
+                Calcel
+            </button>
+            <button id="btnInc" class="button quarter primary">
+                Inclued
+            </button>
+        </div>
       </div>
     </div>
   </body>
+  <script src="./script.js"></script>
 </html>
